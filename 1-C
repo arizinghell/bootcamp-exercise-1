@@ -1,0 +1,12 @@
+SELECT 
+	s.product_name AS "Nama Produk",
+	s.quantity, 
+	s.purchase_date AS "Tanggal Pembelian",
+	r.region
+FROM sales s
+JOIN region r
+ON s.store_city_id = r.store_city_id
+WHERE 1=1
+AND s.product_name in  ('Mangga', 'Jeruk')
+AND s.store_city_id NOT IN (1, 6, 7)
+order by quantity desc
