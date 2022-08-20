@@ -1,0 +1,12 @@
+-- 1 a. BASIC QUERY --
+SELECT * FROM sales WHERE 1=1
+AND store_city_id in (3,4,5)
+AND price_per_kg > 11000
+
+-- 1 a. ALTERNATIVE QUERY --
+SELECT s.product_name AS "Nama Produk", s.quantity AS "Jumlah", r.region, s.price_per_kg AS "Harga per KG", purchase_date AS "Tanggal Pembelian" FROM sales s
+JOIN region r
+ON s.store_city_id = r.store_city_id WHERE 1=1
+AND s.store_city_id in (3,4,5)
+AND s.price_per_kg > 11000
+ORDER BY REGION
